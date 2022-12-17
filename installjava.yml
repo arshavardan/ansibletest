@@ -1,0 +1,10 @@
+---
+- hosts: all
+  become: true
+  tasks:
+         - name: install apache
+           apt: name="{{ item }}" state=present
+           loop:
+                 - tree
+                 - nano
+                 - apache2
